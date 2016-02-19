@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "website skeleton",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "lint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 .",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/doeg/skeleton/issues"
   },
-  "homepage": "https://github.com/doeg/skeleton#readme"
+  "homepage": "https://github.com/doeg/skeleton#readme",
+  "devDependencies": {
+    "eslint": "^1.0.0",
+    "eslint-config-airbnb": "^5.0.1",
+    "install": "^0.4.4",
+    "npm": "^3.7.3"
+  }
 }
