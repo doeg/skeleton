@@ -1,3 +1,9 @@
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+
+const paths = [
+  '/'
+];
+
 module.exports = {
   entry: './src/entry.js',
 
@@ -32,6 +38,7 @@ module.exports = {
   },
 
   plugins: [
+    new StaticSiteGeneratorPlugin('main', paths, {}),
     require('webpack-fail-plugin')
   ]
 };
