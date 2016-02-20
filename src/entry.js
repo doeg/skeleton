@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import Root from './components/Root.jsx';
+
 // Client render (optional):
 if (typeof document !== 'undefined') {
   // Client render code goes here...
@@ -9,6 +13,8 @@ if (typeof document !== 'undefined') {
 // @param locals.webpackStats - Advanced: Webpack's stats object
 //
 module.exports = function render(locals, callback) {
-  console.log('locals', locals);
-  callback(null, '<html>...</html>');
+  const html = ReactDOMServer.renderToStaticMarkup(
+    <Root assets={locals.assets} />
+  );
+  callback(null, `<!DOCTYPE html>${html}`);
 };
