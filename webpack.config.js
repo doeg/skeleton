@@ -1,3 +1,9 @@
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+
+const paths = [
+  '/'
+];
+
 module.exports = {
   entry: './src/entry.js',
 
@@ -13,7 +19,7 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.js$|\.jsx$/,
         loader: "eslint-loader",
         exclude: /node_modules/
       }
@@ -21,7 +27,7 @@ module.exports = {
 
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.js$|\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel', // 'babel-loader' is also a legal name to reference
         query: {
@@ -32,6 +38,7 @@ module.exports = {
   },
 
   plugins: [
+    new StaticSiteGeneratorPlugin('main', paths, {}),
     require('webpack-fail-plugin')
   ]
 };
