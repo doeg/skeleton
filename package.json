@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --progress --colors",
     "build:watch": "webpack --watch --progress --colors",
-    "lint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 .",
+    "lint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 src",
     "test": "npm run lint"
   },
   "repository": {
