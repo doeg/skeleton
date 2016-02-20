@@ -29,5 +29,9 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+
+  plugins: [
+    require('webpack-fail-plugin')
+  ]
 };

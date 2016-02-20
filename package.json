@@ -7,7 +7,7 @@
     "build:watch": "webpack --watch --progress --colors",
     "dev": "webpack-dev-server --content-base dist/ --progress --colors --port 8888",
     "lint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 src",
-    "test": "npm run lint"
+    "test": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "eslint-loader": "^1.3.0",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
+    "webpack-fail-plugin": "^1.0.4"
   }
 }
