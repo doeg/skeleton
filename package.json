@@ -4,10 +4,11 @@
   "description": "website skeleton",
   "scripts": {
     "build": "webpack --progress --colors",
+    "build:test": "webpack --colors",
     "build:watch": "webpack --watch --progress --colors",
     "dev": "webpack-dev-server --content-base dist/ --progress --colors --port 8888",
     "lint": "./node_modules/eslint/bin/eslint.js --max-warnings 0 src",
-    "test": "npm run build"
+    "test": "npm run build:test"
   },
   "repository": {
     "type": "git",
